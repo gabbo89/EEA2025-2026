@@ -1,0 +1,56 @@
+title: EEA aa2024-2025
+description: Tutorial for Bioinformatic Analysis of Epigenetics Data
+theme: just-the-docs
+color_scheme: light
+nav_enabled: true
+back_to_top: true
+back_to_top_text: "Back to top"
+exclude: 
+  - "backup/"
+
+
+#url: https://gabbo89.github.io/EEA2024-2025
+#"https://www.sisfvg.it/sites/default/files/logoUniud-small.png"
+logo: "/assets/images/logo.png"
+favicon_ico: "/assets/images/favicon.png"
+
+url: https://gabbo89.github.io/
+baseurl: "/EEA2024-2025"
+
+##aux_links:
+##  Template Repository: https://github.com/just-the-docs/just-the-docs-template
+#aux_links:
+#  "Analisi di Dati Epigenetici on GitHub":
+#    - "//github.com/gabbo89/EEA2024"
+#aux_links:
+#  "Preview dark color scheme":
+#    - "<button id='theme-toggle' class='btn js-toggle-dark-mode' onclick='modeSwitcher()'>Toggle Theme</button>"
+
+# Color scheme currently only supports "dark", "light"/nil (default), or a custom scheme that you define
+#color_scheme: nil
+#remote_theme: pdmosses/just-the-docs@light-switch
+
+callouts_level: quiet # or loud
+callouts:
+  highlight:
+    color: yellow
+  important:
+    title: Important
+    color: blue
+  success:
+    title: Success
+    color: green
+  note:
+    title: Note
+    color: purple
+  warning:
+    title: Warning
+    color: red
+  failed:
+    title: Failed
+    color: grey-dk
+
+footer_content: "Copyright &copy; 2025 Gabriele Magris."
+
+# For copy button on code
+enable_copy_code_button: true
