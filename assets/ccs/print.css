@@ -1,0 +1,88 @@
+@page {
+    size: letter;
+    margin: 0.75in;
+    @top-left {
+      content: string(running-header);
+      font-size: 10pt;
+      color: #666;
+    }
+    @bottom-center {
+      content: "Page " counter(page) " of " counter(pages);
+      font-size: 10pt;
+      color: #666;
+    }
+  }
+
+  .chapter {
+    string-set: running-header attr(data-running-title);
+  }
+
+  @media print {
+    .side-bar {
+      display: none;
+    }
+    .main-content {
+      max-width: auto;
+      margin: 1em;
+    }
+  }
+
+  .toc {
+    page-break-after: always;
+  }
+
+  .toc-label a {
+    display: flex;
+    justify-content: space-between;
+    text-decoration: none;
+    white-space: nowrap;
+    overflow: hidden;
+  }
+  
+  .toc-text {
+    position: relative;
+    padding-right: 0.5em;
+  }
+  
+  .toc-text::after {
+    position: absolute;
+    left: 0;
+    width: 100%;
+    z-index: -1;
+  }
+  
+  .toc-page::before {
+    content: target-counter(attr(data-target), page);
+    margin-left: 1em;
+  }  
+
+  .chapter {
+    page-break-before: always;
+  }
+  
+  .chapter h1 {
+    font-size: 24pt;
+    margin-top: 2in;
+    padding-bottom: 0.2em;
+  }
+  
+  .section {
+    margin-top: 2em;
+  }
+  
+  .section h2 {
+    font-size: 18pt;
+    margin-top: 1.5em;
+  }
+  
+  .subsection {
+    margin-left: 1em;
+    margin-top: 1.2em;
+  }
+  
+  .subsection h3 {
+    font-size: 14pt;
+    font-weight: bold;
+    margin-top: 1em;
+    margin-bottom: 0.5em;
+  }
