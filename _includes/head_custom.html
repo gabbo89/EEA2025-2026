@@ -1,5 +1,16 @@
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tocbot/4.11.1/tocbot.css">
-
+{% if page.print %}
+  <style>
+    @page {
+      @top-right {
+        content: "{{ site.title | default: 'Printable Docs' }}";
+        font-size: 10pt;
+        color: #666;
+      }
+    }
+  </style>
+  <script src="https://unpkg.com/pagedjs/dist/paged.polyfill.js"></script>
+  <link rel="stylesheet" href="{{ '/assets/css/print.css' | relative_url }}">
+{% else %}
 <script>
   let themeLocalStorage = localStorage.getItem('theme');
   if(!themeLocalStorage) {
@@ -15,3 +26,4 @@
   }
 </script>
 <script type="text/javascript" src="{{ '/assets/js/theme-switch.js' | relative_url }}" defer></script>
+{% endif %}
