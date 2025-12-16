@@ -232,7 +232,7 @@ ont/sequences/rkatsiteli.leaves.ont.fastq \
     <summary>Show answer</summary>
 <br>
 
-The default output of minimap2 is in <code>PAF</code> format, and you can find a detailed description <a href="https://gabbo89.github.io/EEA2024-2025/docs/2a1_file_formats.html#paf">here</a>
+The default output of minimap2 is in <code>PAF</code> format, and you can find a detailed description <a href="https://gabbo89.github.io/EEA2025-2026/docs/2a1_file_formats.html#paf">here</a>
 
 
 </details>
@@ -414,7 +414,7 @@ ont/meth_extr/rkatsiteli.leaves.CG.bedMethyl
 >
 > Done, processed 61368 rows. Processed ~23598 reads and skipped zero reads.
 
-For a detailed description of the output check [Modkit bedMethyl file description](https://gabbo89.github.io/EEA2024-2025/docs/2a4_Modkit_manual.html#Description-of-bedMethyl-output)
+For a detailed description of the output check [Modkit bedMethyl file description](https://gabbo89.github.io/EEA2025-2026/docs/2a4_Modkit_manual.html#Description-of-bedMethyl-output)
 
 <a id="modkit-bedMethyl"></a>
 We can collect read-level statistics for a general overview using `modkit summary`. 
@@ -590,7 +590,7 @@ ont/alignments/rkatsiteli.leaves.ont.chloroplast.only_chl.sort.bam
 ```
 
 
-[Modkit short manual]: https://gabbo89.github.io/EEA2024-2025/docs/2a4_Modkit_manual.html
+[Modkit short manual]: https://gabbo89.github.io/EEA2025-2026/docs/2a4_Modkit_manual.html
 [Modkit_github]: https://github.com/nanoporetech/modkit
 
 <!--

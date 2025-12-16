@@ -261,7 +261,7 @@ Check the obtained figures from the output folder in order to evaluate the quali
 Once the raw fastq files have been filtered in order to remove potential contaminants and adapters, we are ready to perform the alignment, given a reference genome.
 
 
-In order to perform the alignment we will use the Bismark suite [Bismark short manual](https://gabbo89.github.io/EEA2024-2025/docs/2a3_Bismark_manual.html){: .btn } [Bismark on github](https://felixkrueger.github.io/Bismark/){: .btn }
+In order to perform the alignment we will use the Bismark suite [Bismark short manual](https://gabbo89.github.io/EEA2025-2026/docs/2a3_Bismark_manual.html){: .btn } [Bismark on github](https://felixkrueger.github.io/Bismark/){: .btn }
 
 <!--
 In order to perform the alignment we will use the Bismark suite [^Bismark short manual] [Bismark short manual][bismark short manual] and [^TrimGalore on Github][trimgalore_github].
@@ -427,7 +427,7 @@ The ouput of the aligment process is a `bam file` containing mapping results tha
 `Samtools` is a suite of commands that can be used for manipulating sam/bam files. In order to visualize the content we can use the `samtools view` command.
 
 <a id="bismark-bam"></a>
-Bismark bam file is a tab separate textual file (in binary format if `bam`) and for a detailed description check [Bismark bam file description](https://gabbo89.github.io/EEA2024-2025/docs/2a3a_Bismark_file_descr.html)
+Bismark bam file is a tab separate textual file (in binary format if `bam`) and for a detailed description check [Bismark bam file description](https://gabbo89.github.io/EEA2025-2026/docs/2a3a_Bismark_file_descr.html)
 
 <!--
  (1) QNAME  (read name)
@@ -612,11 +612,11 @@ alignments/rkatsiteli.leaves_pe.deduplicated.bam
 >Finished generating genome-wide cytosine report
 
 <a id="bismark-meth_extract"></a>
-Several files will be produced in this last step, for a detailed description check [Bismark file description](https://gabbo89.github.io/EEA2024-2025/docs/2a3a_Bismark_file_descr.html#meth_extract)
+Several files will be produced in this last step, for a detailed description check [Bismark file description](https://gabbo89.github.io/EEA2025-2026/docs/2a3a_Bismark_file_descr.html#meth_extract)
 
 
 <a id="bismark-CX_report"></a>
-The most important file is the `*CX_report.txt` that contains the methylome data across the genome. Check the detailed description [Bismark methylation file description](https://gabbo89.github.io/EEA2024-2025/docs/2a3a_Bismark_file_descr.html#optional-genome-wide-cytosine-report-output).
+The most important file is the `*CX_report.txt` that contains the methylome data across the genome. Check the detailed description [Bismark methylation file description](https://gabbo89.github.io/EEA2025-2026/docs/2a3a_Bismark_file_descr.html#optional-genome-wide-cytosine-report-output).
 
 The file looks like this:
 
@@ -746,7 +746,7 @@ width was 640
 </video>
 -->
 
-Or, [click here to download the tutorial](https://github.com/gabbo89/EEA2024-2025/blob/main/assets/videos/igv.mp4).
+Or, [click here to download the tutorial](https://github.com/gabbo89/EEA2025-2026/blob/main/assets/videos/igv.mp4).
 
 <!--
 https://github.com/angelmejiabrito/googledrivevideotowebpage?tab=readme-ov-file
@@ -826,7 +826,7 @@ For example, in some situations it could be of interest to merge the information
 
 ---
 
-[trimgalore short manual]: https://gabbo89.github.io/EEA2024-2025/docs/2a2_TrimGalore_manual.html
+[trimgalore short manual]: https://gabbo89.github.io/EEA2025-2026/docs/2a2_TrimGalore_manual.html
 [trimgalore_github]: https://github.com/FelixKrueger/TrimGalore
 
 <!--

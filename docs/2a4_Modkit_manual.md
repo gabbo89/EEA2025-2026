@@ -89,7 +89,7 @@ set on the command line or computed from the data (usually failing the lowest 10
 modification call. This can happen, for example, if the model requires a CpG dinucleotide and the read has a
 CG->CH substitution such that no modification call was produced by the basecaller.
 
-[Back to the ont tutorial](https://gabbo89.github.io/EEA2024-2025/docs/3a2_ONT_cleaning_and_alignment.html#modkit-bedMethyl)
+[Back to the ont tutorial](https://gabbo89.github.io/EEA2025-2026/docs/3a2_ONT_cleaning_and_alignment.html#modkit-bedMethyl)
 
 
 ## Description of columns in `modkit summary`:

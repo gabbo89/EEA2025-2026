@@ -75,7 +75,7 @@ The methylation call string contains a dot `.` for every position in the read no
 - `U` - C in Unknown context (CN or CHN) - methylated
 - `.` - not a C or irrelevant position
 
-[Back to the tutorial](https://gabbo89.github.io/EEA2024-2025/docs/3a1_WGBS_cleaning_and_alignment.html#bismark-bam)
+[Back to the tutorial](https://gabbo89.github.io/EEA2025-2026/docs/3a1_WGBS_cleaning_and_alignment.html#bismark-bam)
 
 
 <a id="meth_extract"></a>
@@ -236,7 +236,7 @@ C         CAC        CCAC          296               38560               0.76
 G         CAC        GCAC          201               26655               0.75
 ```
 
-[Back to the tutorial](https://gabbo89.github.io/EEA2024-2025/docs/3a1_WGBS_cleaning_and_alignment.html#bismark-meth_extract)
+[Back to the tutorial](https://gabbo89.github.io/EEA2025-2026/docs/3a1_WGBS_cleaning_and_alignment.html#bismark-meth_extract)
 
 
 
