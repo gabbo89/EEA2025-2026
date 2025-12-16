@@ -1,1 +1,16 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tocbot/4.11.1/tocbot.css">
+
+<script>
+  let themeLocalStorage = localStorage.getItem('theme');
+  if(!themeLocalStorage) {
+    let systemPrefersColorScheme = window.matchMedia("(prefers-color-scheme: dark)").matches ? 'dark' : 'light';
+    localStorage.setItem('theme', systemPrefersColorScheme);
+  }
+  if (localStorage.getItem('theme') === 'dark') {
+    document.documentElement.classList.add('dark-mode');
+    document.getElementById('theme-style').href = '{{ "/assets/css/just-the-docs-dark.css" | relative_url }}';
+  } else {
+    document.documentElement.classList.add('light-mode');
+    document.getElementById('theme-style').href = '{{ "/assets/css/just-the-docs-light.css" | relative_url }}';
+  }
+</script>
