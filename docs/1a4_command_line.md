@@ -1,8 +1,8 @@
 ---
 layout: default
 title: The command line
-nav_order: 5
 parent: 1. Introduction
+nav_order: 4
 description: Introduction to the command line
 published: true
 ---

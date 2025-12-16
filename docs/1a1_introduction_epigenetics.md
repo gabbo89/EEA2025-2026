@@ -1,13 +1,13 @@
 ---
 layout: default
 title: Epigenetic data analysis
-nav_order: 1
 parent: 1. Introduction
+nav_order: 1
 description: A comprehensive guide to understanding epigenetics.
 ---
 
 # Epigenetics
-_Epigenetics_ refers to changes in gene expression that do not involve alterations to the underlying DNA sequence. These changes are influenced by environmental factors, lifestyle, and developmental stages.
+_Epigenetics_ refers to changes in gene expression that do not involve alterations to the underlying DNA sequence. These changes are influenced by environmental factors, lifestyle, and developmental stages. While the cell's DNA provides the instruction manual, the epigenetic processes tell the cell to read specific pages of the instruction manual at distinct times. 
 
 ---
 
@@ -79,9 +79,10 @@ This illustrates how environmental factors can have multi-generational effects.
 
 ## Further Reading
 
-- [National Human Genome Research Institute - Epigenomics](https://www.genome.gov/genetics-glossary/Epigenomics)
+- [National Human Genome Research Institute - Epigenetics](https://www.genome.gov/genetics-glossary/Epigenetics)
 - [Epigenetics on Nature.com](https://www.nature.com/subjects/epigenetics)
-- [NIH Epigenetics Overview](https://www.nih.gov/news-events/epigenetics-overview)
+- [NIH Epigenetics Overview](https://www.nih.gov/news-events/epigenetics-overview) <!--???-->
+- [NIH Health & Education - Epigenetics](https://www.niehs.nih.gov/health/topics/science/epigenetics)
 
 ---
 

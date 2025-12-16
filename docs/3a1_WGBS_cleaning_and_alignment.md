@@ -4,6 +4,7 @@ title: Lesson 1 - WGBS raw data cleaning and alignment
 nav_order: 1
 parent: 3. Tutorial
 description: A comprehensive guide to understanding epigenetics.
+usetocbot: true
 ---
 <!--
 You can select the color-scheme for the tutorial: <button class="btn js-toggle-dark-mode">Preview dark color scheme</button>

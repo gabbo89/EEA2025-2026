@@ -1,6 +1,6 @@
 # Analisi Bioinformatica di Dati Epigenetici
 
-This is the github page for the course "Analisi Bioinformatica di Dati Epigenetici" (Bioinformatics Analysis of Epigenetic Data) held at the University of Udine (A.A. 2024-2025).
+This is the github page for the course "Analisi Bioinformatica di Dati Epigenetici" (Bioinformatics Analysis of Epigenetic Data) held at the University of Udine (A.A. 2025-2026).
 
 
 # add a figure of methylation 

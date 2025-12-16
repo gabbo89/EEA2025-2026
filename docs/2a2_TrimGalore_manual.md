@@ -1,8 +1,8 @@
 ---
 layout: default
 title: TrimGalore manual
-nav_order: 2
 parent: 2. General Guides
+nav_order: 2
 description: A brief description of the software used for cleaning the raw fastq data.
 published: true
 ---

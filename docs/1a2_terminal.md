@@ -1,8 +1,8 @@
 ---
 layout: default
 title: Use of the terminal
-nav_order: 2
 parent: 1. Introduction
+nav_order: 2
 description: A comprehensive guide to understanding epigenetics.
 published: true
 ---
