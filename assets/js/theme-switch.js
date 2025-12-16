@@ -40,12 +40,12 @@ window.addEventListener("DOMContentLoaded", function() {
         toggleDarkMode.innerHTML = `<svg width='18px' height='18px'><use href="#svg-moon"></use></svg>`;
         document.documentElement.classList.add('dark-mode');
         document.documentElement.classList.remove('light-mode');
-        if (themeStyleLink) themeStyleLink.href = '/assets/css/just-the-docs-dark.css';
+        if (themeStyleLink) themeStyleLink.href = "{{ '/assets/css/just-the-docs-dark.scss' | relative_url }};
       } else {
         toggleDarkMode.innerHTML = `<svg width='18px' height='18px'><use href="#svg-sun"></use></svg>`;
         document.documentElement.classList.add('light-mode');
         document.documentElement.classList.remove('dark-mode');
-        if (themeStyleLink) themeStyleLink.href = '/assets/css/just-the-docs-light.css';
+        if (themeStyleLink) themeStyleLink.href = "{{ '/assets/css/just-the-docs-light.scss' | relative_url }};
       }
     }
   });
