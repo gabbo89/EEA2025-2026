@@ -1,0 +1,9 @@
+{%- comment -%}
+  Compatibility shim: many layouts include `nav.html` (legacy). The repo
+  contains `components/site_nav.html` which implements the same behaviour.
+  This file forwards parameters to that include so older layouts keep working.
+
+  Usage: {% include nav.html pages=collection all=true %}
+{%- endcomment -%}
+
+{%- include_cached components/site_nav.html pages=include.pages all=include.all -%}
