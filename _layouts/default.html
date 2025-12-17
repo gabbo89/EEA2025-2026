@@ -45,8 +45,13 @@ layout: table_wrappers
   {% endif %}
 </body>
 
-
-<div class="toc-right">
-  <nav id="toc"></nav>
+  <div class="toc-right">
+    <nav id="toc"></nav>
+  </div>
 </div>
+
+{% if site.mermaid %}
+  {% include components/mermaid.html %}
+{% endif %}
+</body>
 </html>
