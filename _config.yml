@@ -54,3 +54,5 @@ footer_content: "Copyright &copy; 2026 Gabriele Magris."
 
 # For copy button on code
 enable_copy_code_button: true
+
+heading_anchors: true
