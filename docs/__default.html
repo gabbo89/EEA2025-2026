@@ -84,21 +84,7 @@ layout: table_wrappers
       {% endif %}
       {% include header_custom.html %}
       {% if site.aux_links %}
-        <nav aria-label="Auxiliary" class="aux-nav">
-          <ul class="aux-nav-list">
-            {% for link in site.aux_links %}
-              <li class="aux-nav-list-item">
-                <a href="{{ link.last }}" class="site-button"
-                  {% if site.aux_links_new_tab %}
-                  target="_blank" rel="noopener noreferrer"
-                  {% endif %}
-                >
-                  {{ link.first }}
-                </a>
-              </li>
-            {% endfor %}
-          </ul>
-        </nav>
+        {% include components/aux_nav.html %}
       {% endif %}
     </div>
     <div id="main-content-wrap" class="main-content-wrap">
