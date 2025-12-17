@@ -1,36 +1,29 @@
-
-
+{% if page.print %}
+  <style>
+    @page {
+      @top-right {
+        content: "{{ site.title | default: 'Printable Docs' }}";
+        font-size: 10pt;
+        color: #666;
+      }
+    }
+  </style>
+  <script src="https://unpkg.com/pagedjs/dist/paged.polyfill.js"></script>
+  <link rel="stylesheet" href="{{ '/assets/css/print.css' | relative_url }}">
+{% else %}
 <script>
-  // Robust theme initialization: prefer the data attributes on the #theme-style link
-  // (these are Liquid-generated and always valid), and fall back to a sensible default.
-  try {
-    const themeStyle = document.getElementById('theme-style');
-    let theme = localStorage.getItem('theme');
-
-    if (!theme) {
-      const systemPrefers = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
-      theme = systemPrefers;
-      localStorage.setItem('theme', theme);
-    }
-
-    if (theme === 'dark') {
-      document.documentElement.classList.add('dark-mode');
-      document.documentElement.classList.remove('light-mode');
-      if (themeStyle && themeStyle.dataset && themeStyle.dataset.dark) {
-        themeStyle.href = themeStyle.dataset.dark;
-      }
-    } else {
-      document.documentElement.classList.add('light-mode');
-      document.documentElement.classList.remove('dark-mode');
-      if (themeStyle && themeStyle.dataset && themeStyle.dataset.light) {
-        themeStyle.href = themeStyle.dataset.light;
-      }
-    }
-  } catch (e) {
-    // Don't break the page if anything goes wrong here; log for debugging.
-    if (typeof console !== 'undefined') console.warn('Theme init error', e);
+  let themeLocalStorage = localStorage.getItem('theme');
+  if(!themeLocalStorage) {
+    let systemPrefersColorScheme = window.matchMedia("(prefers-color-scheme: dark)").matches ? 'dark' : 'light';
+    localStorage.setItem('theme', systemPrefersColorScheme);
+  }
+  if (localStorage.getItem('theme') === 'dark') {
+    document.documentElement.classList.add('dark-mode');
+    document.getElementById('theme-style').href = '{{ "/assets/css/just-the-docs-dark.css" | relative_url }}';
+  } else {
+    document.documentElement.classList.add('light-mode');
+    document.getElementById('theme-style').href = '{{ "/assets/css/just-the-docs-light.css" | relative_url }}';
   }
 </script>
-
-
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tocbot/4.11.1/tocbot.css">
+<script type="text/javascript" src="{{ '/assets/js/theme-switch.js' | relative_url }}" defer></script>
+{% endif %}
