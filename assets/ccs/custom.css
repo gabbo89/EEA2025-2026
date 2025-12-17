@@ -15,34 +15,3 @@
   list-style: none;
 }
 
-.toc-right {
-  position: fixed;
-  top: 6rem;
-  right: 1.5rem;
-  width: 240px;
-  max-height: 80vh;
-  overflow-y: auto;
-  font-size: 0.85rem;
-  border-left: 1px solid #e5e5e5;
-  padding-left: 1rem;
-}
-
-.toc-right .toc-list {
-  padding-left: 0;
-}
-
-.toc-right a {
-  color: #4b5563;
-  text-decoration: none;
-}
-
-.toc-right a.is-active-link {
-  font-weight: 600;
-  color: #111827;
-}
-
-@media (max-width: 1200px) {
-  .toc-right {
-    display: none;
-  }
-}
