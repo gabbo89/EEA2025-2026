@@ -87,5 +87,37 @@
       window.addEventListener('resize', adjustTocPosition, false);
       /* also run shortly after init in case layout shifts */
       setTimeout(adjustTocPosition, 250);
+
+      /*
+       * Ensure the main column margin-left matches the side-bar width so the
+       * main content never overlaps the fixed sidebar. This mirrors the
+       * theme behavior but defends against cases where styles are different
+       * or the DOM is modified dynamically.
+       */
+      function adjustMainMargin(){
+        try {
+          var sidebar = document.querySelector('.side-bar');
+          var main = document.querySelector('.main');
+          if (!sidebar || !main) return;
+
+          /* Only apply on wide viewports where sidebar is fixed */
+          if (window.innerWidth < 800) {
+            main.style.marginLeft = '';
+            return;
+          }
+
+          var sidebarRect = sidebar.getBoundingClientRect();
+          var sidebarWidth = Math.ceil(sidebarRect.width);
+          /* add small gap of 16px to separate columns */
+          var target = sidebarWidth + 16;
+          main.style.marginLeft = target + 'px';
+        } catch (e) {
+          /* silent */
+        }
+      }
+
+      window.addEventListener('load', adjustMainMargin, false);
+      window.addEventListener('resize', adjustMainMargin, false);
+      setTimeout(adjustMainMargin, 150);
     </script>
   {% endif %}
