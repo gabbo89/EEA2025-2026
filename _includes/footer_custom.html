@@ -11,6 +11,7 @@
       /* Dynamically add the toc navbar after the side-bar element. This allows us
          to *not* have to override default.html in _layouts */
       let sideBarElements = document.getElementsByClassName('side-bar');
+<<<<<<< HEAD
       let tocNav = document.createElement('nav');
       tocNav.setAttribute("id", "tocbot-toc");
       tocNav.classList.add("js-toc");
@@ -20,6 +21,15 @@
          is interpreted by the browser (some transforms make fixed act
          like absolute relative to the ancestor). */
       document.body.appendChild(tocNav);
+=======
+      if (sideBarElements.length > 0){
+        let tocNav = document.createElement('nav');
+        tocNav.setAttribute("id", "tocbot-toc");
+        tocNav.classList.add("js-toc");
+        tocNav.classList.add("tocbot-right");
+        sideBarElements[0].after(tocNav);
+      }
+>>>>>>> parent of 1540564 (tocbot)
 
       /** WARNING: YOU MUST USE C MULTI-LINE COMMENT STYLE RATHER THAN // BECAUSE 
        *  OF HOW JEKYLL COMPILES THIS FILE INTO SINGLE LINES **/
