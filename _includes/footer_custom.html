@@ -48,5 +48,44 @@
 
       /* Listen for scroll events */
       window.addEventListener('scroll', onScrollHandler, false);
+
+      /*
+       * Position the TOC to the right of the main content column so it
+       * never overlaps the left side-bar or the main column. This computes
+       * the main-content bounding rect and places the TOC with a small gap.
+       */
+      function adjustTocPosition(){
+        try {
+          var toc = document.getElementById('tocbot-toc');
+          var mainContent = document.querySelector('.main-content');
+          if (!toc || !mainContent) return;
+
+          /* Hide on narrow viewports (matches the CSS rule in custom.css) */
+          if (window.innerWidth < 1000) {
+            toc.style.display = 'none';
+            return;
+          } else {
+            toc.style.display = '';
+          }
+
+          var rect = mainContent.getBoundingClientRect();
+          /* place TOC 16px to the right of the main content */
+          var leftPos = Math.round(rect.right + 16 + window.scrollX);
+          toc.style.position = 'fixed';
+          toc.style.left = leftPos + 'px';
+          toc.style.right = 'auto';
+          toc.style.top = (Math.max(80, rect.top + 10)) + 'px';
+          toc.style.visibility = toc.style.visibility || 'visible';
+          toc.style.zIndex = 1000;
+        } catch (e) {
+          /* fail silently */
+        }
+      }
+
+      /* adjust on load and resize */
+      window.addEventListener('load', adjustTocPosition, false);
+      window.addEventListener('resize', adjustTocPosition, false);
+      /* also run shortly after init in case layout shifts */
+      setTimeout(adjustTocPosition, 250);
     </script>
   {% endif %}
