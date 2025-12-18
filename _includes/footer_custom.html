@@ -11,12 +11,15 @@
       /* Dynamically add the toc navbar after the side-bar element. This allows us
          to *not* have to override default.html in _layouts */
       let sideBarElements = document.getElementsByClassName('side-bar');
+      let tocNav = document.createElement('nav');
+      tocNav.setAttribute("id", "tocbot-toc");
+      tocNav.classList.add("js-toc");
+      tocNav.classList.add("tocbot-right");
+      /* Insert after the side-bar when present; otherwise append to body as a fallback */
       if (sideBarElements.length > 0){
-        let tocNav = document.createElement('nav');
-        tocNav.setAttribute("id", "tocbot-toc");
-        tocNav.classList.add("js-toc");
-        tocNav.classList.add("tocbot-right");
         sideBarElements[0].after(tocNav);
+      } else {
+        document.body.appendChild(tocNav);
       }
 
       /** WARNING: YOU MUST USE C MULTI-LINE COMMENT STYLE RATHER THAN // BECAUSE 
