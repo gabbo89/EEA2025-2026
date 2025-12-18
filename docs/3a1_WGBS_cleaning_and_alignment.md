@@ -530,6 +530,7 @@ deduplicate_bismark \
 
 ### Extract methylation information
 {: .no_toc }
+
 In order to extract methylation information we will run the command `bismark_methylation_extractor`. The script will operate on Bismark result files and extracts the methylation call for every single C analysed. 
 
 

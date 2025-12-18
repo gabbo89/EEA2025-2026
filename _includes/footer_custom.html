@@ -70,13 +70,12 @@
 
           var rect = mainContent.getBoundingClientRect();
           /* place TOC 16px to the right of the main content */
-          var leftPos = Math.round(rect.right + 16 + window.scrollX);
-          /* Prevent the TOC from overflowing the viewport on the right */
-          var tocWidth = toc.offsetWidth || parseInt(window.getComputedStyle(toc).width) || 200;
-          var maxLeft = window.scrollX + window.innerWidth - tocWidth - 16;
-          if (leftPos > maxLeft) leftPos = Math.max(rect.right + 8 + window.scrollX, maxLeft);
+          /* Anchor the TOC to the viewport right side to avoid complex left
+           * calculations that can accidentally place it over content. Use
+           * a small right offset so it stays visible and doesn't affect layout. */
           toc.style.position = 'fixed';
-          toc.style.left = leftPos + 'px';
+          toc.style.right = '2rem';
+          toc.style.left = 'auto';
           toc.style.right = 'auto';
           toc.style.top = (Math.max(80, rect.top + 10)) + 'px';
           toc.style.visibility = toc.style.visibility || 'visible';
@@ -101,9 +100,12 @@
           if (!toc) return;
           var links = toc.querySelectorAll('a');
           links.forEach(function(a){
-            var txt = a.textContent || '';
+            var txt = (a.textContent || '').trim();
+            /* Remove multiple leading numeric or alpha groups like "1. a. " */
             var cleaned = txt.replace(/^\s*(?:(?:\d+|[a-zA-Z])\.\s*)+/, '');
-            if (cleaned !== txt) a.textContent = cleaned;
+            /* If there are inner span elements (toc numbering), replace innerHTML
+             * with the cleaned text to remove them entirely. */
+            if (cleaned !== txt) a.innerHTML = cleaned;
           });
         } catch (e) { /* silent */ }
       }
