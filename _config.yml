@@ -37,14 +37,12 @@ callouts:
   important:
     title: Important
     color: blue
-    #opacity: 0.3
   success:
     title: Success
-    color: green-light
+    color: green
   note:
     title: Note
     color: purple
-    #opacity: 0.3
   warning:
     title: Warning
     color: red
