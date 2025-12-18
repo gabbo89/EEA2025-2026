@@ -71,6 +71,10 @@
           var rect = mainContent.getBoundingClientRect();
           /* place TOC 16px to the right of the main content */
           var leftPos = Math.round(rect.right + 16 + window.scrollX);
+          /* Prevent the TOC from overflowing the viewport on the right */
+          var tocWidth = toc.offsetWidth || parseInt(window.getComputedStyle(toc).width) || 200;
+          var maxLeft = window.scrollX + window.innerWidth - tocWidth - 16;
+          if (leftPos > maxLeft) leftPos = Math.max(rect.right + 8 + window.scrollX, maxLeft);
           toc.style.position = 'fixed';
           toc.style.left = leftPos + 'px';
           toc.style.right = 'auto';
@@ -87,6 +91,26 @@
       window.addEventListener('resize', adjustTocPosition, false);
       /* also run shortly after init in case layout shifts */
       setTimeout(adjustTocPosition, 250);
+
+      /* Remove numeric prefixes from TOC entries (e.g. "1. a. Title") so
+       * the TOC doesn't duplicate numbering that is already present in
+       * heading text. This strips repeated leading groups like "1. a. " */
+      function stripTocNumbers(){
+        try {
+          var toc = document.getElementById('tocbot-toc');
+          if (!toc) return;
+          var links = toc.querySelectorAll('a');
+          links.forEach(function(a){
+            var txt = a.textContent || '';
+            var cleaned = txt.replace(/^\s*(?:(?:\d+|[a-zA-Z])\.\s*)+/, '');
+            if (cleaned !== txt) a.textContent = cleaned;
+          });
+        } catch (e) { /* silent */ }
+      }
+
+      window.addEventListener('load', stripTocNumbers, false);
+      window.addEventListener('resize', function(){ setTimeout(stripTocNumbers, 100); }, false);
+      setTimeout(stripTocNumbers, 350);
 
       /*
        * Ensure the main column margin-left matches the side-bar width so the

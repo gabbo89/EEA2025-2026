@@ -9,8 +9,11 @@
   visibility: hidden;
   top: 90px;
   right: 2rem; /* distance from the right edge of the viewport */
-  width: 250px;
-  max-width: 30%;
+  width: 200px;
+  max-width: 22vw;
+  box-sizing: border-box;
+  max-height: calc(100vh - 120px);
+  overflow: auto;
   z-index: 1000;
   background-color: rgba(255, 255, 255, 0.95);
   box-shadow: 0 2px 6px rgba(0,0,0,0.08);
@@ -20,6 +23,18 @@
 
 #tocbot-toc ol {
   list-style: none;
+}
+/* Remove numbering added by tocbot via CSS counters (li::before) */
+#tocbot-toc .toc-list li::before {
+  content: none !important;
+}
+
+/* Remove left padding added to nested lists so links align nicely */
+#tocbot-toc .toc-list,
+#tocbot-toc .toc-list ul,
+#tocbot-toc .toc-list ol {
+  padding-left: 0 !important;
+  margin-left: 0 !important;
 }
 /* Responsive: hide TOC on narrower viewports to prevent overlap */
 @media (max-width: 1000px) {
