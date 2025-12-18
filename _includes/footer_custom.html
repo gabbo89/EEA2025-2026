@@ -89,6 +89,11 @@
       /* also run shortly after init in case layout shifts */
       setTimeout(adjustTocPosition, 250);
 
+  /* Ensure tocbot recalculates/refreshes after the page has rendered and
+   * after our sanitization of the DOM. This helps the TOC populate when
+   * the content is generated server-side and when layout shifts occur. */
+  setTimeout(function(){ try { if (window.tocbot && typeof tocbot.refresh === 'function') tocbot.refresh(); } catch(e){} }, 600);
+
       /* Remove numeric prefixes from TOC entries (e.g. "1. a. Title") so
        * the TOC doesn't duplicate numbering that is already present in
        * heading text. This strips repeated leading groups like "1. a. " */
