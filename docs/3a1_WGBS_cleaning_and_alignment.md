@@ -33,7 +33,14 @@ Final version
 > 
 
 <br>
-<br>
+<details open markdown="block">
+  <summary>
+    <strong>Table of contents</strong>
+  </summary>
+  {: .text-delta }
+- TOC
+{:toc}
+</details>
 
 <!--
 ---
