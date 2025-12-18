@@ -37,6 +37,7 @@ callouts:
   important:
     title: Important
     color: blue
+    opacity: 0.3
   success:
     title: Success
     color: green
