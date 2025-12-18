@@ -6,6 +6,7 @@
   visibility: visible !important;
   top: 90px;
 <<<<<<< HEAD
+<<<<<<< HEAD
   right: 2rem; /* distance from the right edge of the viewport */
   width: 200px;
   max-width: 22vw;
@@ -18,11 +19,16 @@
   padding: 0.5rem;
   border-radius: 4px;
 =======
+=======
+>>>>>>> parent of 1540564 (tocbot)
   left: calc((100% - 1064px) / 2 + 264px + 800px); 
   width:250px;
   right: 0px;
   z-index: 10;
   background-color: rgba(255, 255, 255, 0.9);
+<<<<<<< HEAD
+>>>>>>> parent of 1540564 (tocbot)
+=======
 >>>>>>> parent of 1540564 (tocbot)
 }
 
