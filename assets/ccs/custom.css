@@ -6,7 +6,7 @@
      could push the page or create horizontal scroll. Use `right` so
      the TOC doesn't affect layout. */
   position: fixed !important;
-  visibility: hidden;
+  visibility: visible !important;
   top: 90px;
   right: 2rem; /* distance from the right edge of the viewport */
   width: 200px;
@@ -55,6 +55,15 @@
   padding-left: 0 !important;
   margin-left: 0 !important;
   list-style: none !important;
+}
+
+/* If tocbot is enabled we prefer the right-side TOC; hide the in-page
+   generated TOC block to avoid duplicate TOCs and layout overlap. */
+.main-content .toc,
+.main-content .table-of-contents,
+.main-content details > .toc,
+.main-content details > .table-of-contents {
+  display: none !important;
 }
 /* Responsive: hide TOC on narrower viewports to prevent overlap */
 @media (max-width: 1000px) {

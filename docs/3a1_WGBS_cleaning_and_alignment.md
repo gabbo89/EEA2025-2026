@@ -165,6 +165,7 @@ The quality of the data can be improved by trimming the data. Trimming removes l
 Refer to the powerpoint presentation for additional informations.  
 -->
 
+<br>
 
 {: .highlight-title}
 > Question
@@ -177,7 +178,7 @@ Refer to the powerpoint presentation for additional informations.
     <summary><strong>Show answer</strong></summary>
 
 1. Yes it is - be always careful and have the specific characteristics of your data in mind during interpretation of the results.
-
+<br>
 2. Every C-meth stays a C while every normal C becomes a T during bisulfite conversion
 
 
