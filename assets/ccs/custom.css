@@ -1,32 +1,72 @@
+/* This is custom.css */
+video {
+  max-width: 100%;
+  height: auto;
+  margin-bottom: 16px;
+}
+
+blockquote{
+  margin: 2em 1em 2em 0;
+  padding-left: 1em;
+  padding-right: 1em;
+  font-style: italic;
+  font-size: 22px;
+  border-left: 0.25em solid #6f777d;
+}
+
+.margin-zero{
+  margin: 0;
+}
+
+.text-right{
+  text-align: right;
+}
+
+cite{
+  text-align: right;
+  font-size: smaller;
+}
+
+/* to add a margin at the bottom of our code blocks */
+figure.highlight {
+  margin-bottom: 1em;
+} 
+
+/* Without this, the gist it script's prettify font is too large */
+.gist-it-gist{
+  font-size: small;
+}
+
+/* image align center */
+/* See: https://mmistakes.github.io/minimal-mistakes/docs/utility-classes/
+/* https://github.com/mmistakes/minimal-mistakes/blob/a2385e25840f38d573d057f427396eaf09f41e81/_sass/minimal-mistakes/_utilities.scss */
+.align-center {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.test-css{
+  font-size: 14 pt;
+  font-family: 'Courier New', Courier, monospace;
+}
+
 /**** FOR TOCBOT ******/
 /** See: https://tscanlin.github.io/tocbot/ **/
-/* TOCBOT: right-floating table of contents
-   - Use `right` instead of a brittle `left: calc(...)` calculation
-   - Keep it hidden by default and reveal with JS (existing behaviour)
-   - Hide on small screens to avoid layout breakage
-*/
 #tocbot-toc{
   position: fixed !important;
-  visibility: hidden; /* toggled visible by JS after scroll */
+  visibility: hidden;
   top: 90px;
-  right: 2rem; /* stable distance from right edge */
-  left: auto;
-  width: 250px;
+  left: calc((100% - 1064px) / 2 + 264px + 800px); 
+  width:250px;
+  right: 0px;
   z-index: 10;
-  background-color: rgba(255, 255, 255, 0.95);
-  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
-  border-radius: 4px;
-  padding: 0.5rem 0.75rem;
-  overflow: auto;
-  max-height: calc(100vh - 120px);
+  background-color: rgba(255, 255, 255, 0.9);
 }
 
 #tocbot-toc ol {
   list-style: none;
-  margin: 0;
-  padding-left: 0.5rem;
 }
-
 /* Responsive: hide TOC on narrower viewports to prevent overlap */
 @media (max-width: 1000px) {
   #tocbot-toc { display: none !important; }
