@@ -94,6 +94,52 @@
    * the content is generated server-side and when layout shifts occur. */
   setTimeout(function(){ try { if (window.tocbot && typeof tocbot.refresh === 'function') tocbot.refresh(); } catch(e){} }, 600);
 
+      /* If tocbot didn't populate (empty nav), build a simple fallback TOC
+       * from the headings in the page so the user always has a TOC. */
+      function slugify(text){
+        return text.toString().toLowerCase().trim()
+          .replace(/\s+/g, '-')           // Replace spaces with -
+          .replace(/[^a-z0-9\-]/g, '')    // Remove invalid chars
+          .replace(/\-\-+/g, '-');       // Collapse dashes
+      }
+
+      function buildFallbackToc(){
+        try {
+          var toc = document.getElementById('tocbot-toc');
+          var content = document.querySelector('.main-content');
+          if (!toc || !content) return;
+          // if tocbot already populated links, don't overwrite
+          if (toc.querySelectorAll('a').length > 0) return;
+
+          var headings = content.querySelectorAll('h1, h2, h3, h4');
+          if (!headings || headings.length === 0) return;
+
+          var ol = document.createElement('ol');
+          ol.className = 'fallback-toc-list';
+          headings.forEach(function(h){
+            var text = (h.textContent || '').trim();
+            if (!text) return;
+            var id = h.id || slugify(text);
+            if (!h.id) h.id = id;
+            var li = document.createElement('li');
+            var a = document.createElement('a');
+            a.href = '#'+id;
+            a.textContent = text;
+            li.appendChild(a);
+            ol.appendChild(li);
+          });
+          // clear and append
+          toc.innerHTML = '';
+          var title = document.createElement('div');
+          title.className = 'toc-title';
+          title.textContent = 'Contents';
+          toc.appendChild(title);
+          toc.appendChild(ol);
+        } catch(e){ /* silent */ }
+      }
+
+      setTimeout(buildFallbackToc, 800);
+
       /* Remove numeric prefixes from TOC entries (e.g. "1. a. Title") so
        * the TOC doesn't duplicate numbering that is already present in
        * heading text. This strips repeated leading groups like "1. a. " */
