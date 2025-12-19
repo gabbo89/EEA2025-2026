@@ -170,7 +170,7 @@ Refer to the powerpoint presentation for additional informations.
 {: .highlight-title}
 > Question
 >
-> 1. Is everything as expected ?
+> 1. Is everything as expected?
 > 2. The nucleotide distribution is normal both for R1 and R2?
 >
 
