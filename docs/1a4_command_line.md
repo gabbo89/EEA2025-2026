@@ -716,6 +716,7 @@ awk '{if(condition 1) actionA; if(condition 2 && condition 3) actionB}' input_fi
 ```
 
 Let's try with an exercise. Suppose to have a file with the following content:
+
 | Studente  | Materia | Voto |
 |-----------|-----------|-----|
 | Carlo     | Biologia  | 80  |
@@ -758,6 +759,7 @@ awk '/Biologia/ {print $1"\t"$3}' /data2/biotecnologie_molecolari_magris/epigeno
 
 <details>
     <summary><strong>Show answer</strong></summary>
+
 
 ```bash
 awk '{if($2=="Chimica" && $3>=80) print $1}' /data2/biotecnologie_molecolari_magris/epigenomics/bash/awk_example.txt
