@@ -757,9 +757,12 @@ awk '/Biologia/ {print $1"\t"$3}' /data2/biotecnologie_molecolari_magris/epigeno
 
 - Extract only the names of student that achieved more or equal to 80 in `Chimica`. Try by your own:
 
-<details class="answer">
-    <!--<summary><strong><span class="summary-label">Show answer</span></strong></summary>-->
+<!--<details class="answer">-->
+<!--<summary><strong><span class="summary-label">Show answer</span></strong></summary>-->
+
+<details>
     <summary><strong>Show answer</strong></summary>
+<br>
 <div markdown="1">
 
 ```bash
