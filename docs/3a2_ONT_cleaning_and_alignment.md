@@ -230,7 +230,7 @@ ont/sequences/rkatsiteli.leaves.ont.fastq \
 
 
 <details>
-    <summary>Show answer</summary>
+    <summary><strong>Show answer</strong></summary>
 <br>
 
 The default output of minimap2 is in <code>PAF</code> format, and you can find a detailed description <a href="https://gabbo89.github.io/EEA2025-2026/docs/2a1_file_formats.html#paf">here</a>

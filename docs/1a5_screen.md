@@ -32,7 +32,7 @@ Programs continue to run when their window is currently not visible and even whe
 
 ## Escape Key
 
-All screen commands are prefixed by an escape key, by default Ctrl-a (that's Control-a, sometimes written ^a). To send a literal Ctrl-a to the programs in screen, use Ctrl-a a. This is useful when when working with screen within screen. For example Ctrl-a a n will move screen to a new window on the screen within screen. 
+All screen commands are prefixed by an escape key, by default Ctrl-a (that's Control-a, sometimes written ^a). To send a literal Ctrl-a to the programs in screen, use Ctrl-a. This is useful when working with screen within screen. For example Ctrl-a n will move screen to a new window on the screen within the screen session. 
 
 ## Getting Out
 
