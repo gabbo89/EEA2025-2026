@@ -60,12 +60,12 @@ The UNIX command line will look like this:
 
 This is called the *bash prompt*...
 
-- *UNIX username* is the your system username.
+- *UNIX username* is your system username.
 - *Computer's alias* is the name UNIX uses to refer to your computer. This will likely contain the model of your computer (e.g. `Latitude-E7270`).
 - The tilde (`~`) indicates that your home directory is the current *working directory*. The home directory is located at `/home/` followed by your UNIX username.
 - The dollar sign (`$`) indicates that the terminal is using the `bash` shell language.
 
-In this page, `st24_16@banjo:~$` will be used as an example bash prompt.
+In this page, `st25_20@banjo:~$` will be used as an example bash prompt.
 
 ## The working directory
 
@@ -79,14 +79,14 @@ This will run the "print working directory" command, which will print the path t
 In the context of command line programs, "print" means "display in the terminal".
 
 ```bash
-st24_16@banjo:~$ pwd
+st25_20@banjo:~$ pwd
 ```
 
 This will give:
 
 ```bash
-st24_16@banjo:~$ pwd
-/home/st24_16
+st25_20@banjo:~$ pwd
+/home/st25_20
 ```
 
 
@@ -97,10 +97,10 @@ Use `pwd` before and after the `cd` command to check which directory you have mo
 Type `cd /data2` to change the working directory to the `/data2` directory.
 
 ```bash
-st24_16@banjo:~$ pwd
-/home/st24_16
-st24_16@banjo:~$ cd /data2
-st24_16@banjo:/data2$ pwd
+st25_20@banjo:~$ pwd
+/home/st25_20
+st25_20@banjo:~$ cd /data2
+st25_20@banjo:/data2$ pwd
 /data2
 ```
 
@@ -113,7 +113,7 @@ If there is only one possible option, this option will be filled in.
 For example, pressing `Tab` twice after typing `cd /d` could give the following directories beginning with "d" as options:
 
 ```bash
-st24_16@banjo:~$ cd /d
+st25_20@banjo:~$ cd /d
 data/  data2/ dev/
 ```
 
@@ -128,7 +128,7 @@ Moving up two directories from `/data2/biotecnologie_molecolari_magris/epigenomi
 
 ```bash
 cd /data2/biotecnologie_molecolari_magris/epigenomics/
-st24_16@banjo:/data2/biotecnologie_molecolari_magris/epigenomics$ pwd
+st25_20@banjo:/data2/biotecnologie_molecolari_magris/epigenomics$ pwd
 /data2/biotecnologie_molecolari_magris/epigenomics
 
 # go up one directory
@@ -351,7 +351,7 @@ In this example, `mkdir` is used to create a directory called `example`, which i
 This is the equivalent of making a new folder within a folder on your desktop.
 
 ```bash
-cd /data2/student_space/st24_16_folder/
+cd /data2/student_space/st25_20_folder/
 
 mkdir example
 
@@ -359,7 +359,7 @@ cd example/
 
 pwd
 
-/data2/student_space/st24_16_folder/example
+/data2/student_space/st25_20_folder/example
 ```
 
 ## Removing files and directories with the `rm` command
@@ -416,7 +416,7 @@ To remove files, simply type `rm` followed by the name of the file, and press `E
 
 ```bash
 pwd
-/data2/student_space/st24_16_folder/example
+/data2/student_space/st25_20_folder/example
 
 # Create an empty file using touch
 touch example_file.txt
@@ -542,7 +542,7 @@ It can take a URL as an argument, and download the file found at that URL into t
 In this example, `wget` is used to download the amino acid sequence of [haemoglobin subunit alpha from UniProt](https://www.uniprot.org/uniprot/P69905):
 
 ```bash
-cd /data2/student_space/st24_16_folder/
+cd /data2/student_space/st25_20_folder/
 
 # Create the directory 
 mkdir -p epigenomics/bash
@@ -696,18 +696,19 @@ awk 'BEGIN {FS=","; OFS="\t"} {print $2,$3}' input_file
 ```
 
 `If` functions can be introduced in the awk command line.
-For exaple if we want to select only rows that have a certain value in the third column, we can use the following command:
+For example if we want to select only rows that have a certain value in the third column, we can use the following command:
 
 ```bash
 awk '{if($3=="chr3") print $0}' input_file
 
 # The same can be achieved
 awk '$3=="chr3"{print $0}' input_file
-
+```
+<!--
 # or 
 
 awk '{if($3=="chr3" && $4==10) print $0}' input_file
-```
+-->
 
 Multiple `if` commands can be combined
 ```bash
@@ -715,16 +716,17 @@ awk '{if(condition 1) actionA; if(condition 2 && condition 3) actionB}' input_fi
 ```
 
 Let's try with an exercise. Suppose to have a file with the following content:
-```bash
-Carlo   Biologia        80
-Carlo   Chimica 100
-Donato  Biologia        100
-Donato  Chimica 90
-Francesca       Biologia        90
-Francesca       Chimica 80
-Chiara  Biologia        100
-Chiara  Chimica 70
-```
+| Studente  | Materia | Voto |
+|-----------|-----------|-----|
+| Carlo     | Biologia  | 80  |
+| Carlo     | Chimica   | 100 |
+| Donato    | Biologia  | 100 |
+| Donato    | Chimica   | 90  |
+| Francesca | Biologia  | 90  |
+| Francesca | Chimica   | 80  |
+| Chiara    | Biologia  | 100 |
+| Chiara    | Chimica   | 70  |
+
 
 File is located here:
 
@@ -752,8 +754,14 @@ awk '/Biologia/' /data2/biotecnologie_molecolari_magris/epigenomics/bash/awk_exa
 awk '/Biologia/ {print $1"\t"$3}' /data2/biotecnologie_molecolari_magris/epigenomics/bash/awk_example.txt
 ```
 
-- Extract only the names of student that achieved more or equal to 80 in `Chimica`
+- Extract only the names of student that achieved more or equal to 80 in `Chimica`. Try by your own:
+
+<details>
+    <summary><strong>Show answer</strong></summary>
 
 ```bash
 awk '{if($2=="Chimica" && $3>=80) print $1}' /data2/biotecnologie_molecolari_magris/epigenomics/bash/awk_example.txt
 ```
+
+</details>
+

@@ -43,7 +43,7 @@ A `.txt` copy of a conda environment is more explicit: it can be used to create 
 
 
 A conda environment can be activated using `$ conda activate name_of_environment`.
-Once activated, the programs installed in this environment are available.
+Once activated, all the programs installed in this environment will become available.
 Conda can be deactivated using `$ conda deactivate`.
 
 
@@ -62,7 +62,7 @@ In order to configure the prompt and be able to use conda, you need to run the f
 eval "$(/course/tadb/miniconda3/bin/conda shell.bash hook)"
 ```
 
-Now you will be able to use teh conda command.
+Now you will be able to use the conda exec.
 
 In order to use the conda environments, you need to run the following command:
 
@@ -70,4 +70,4 @@ In order to use the conda environments, you need to run the following command:
 conda init bash
 ```
 
-![alt text](conda-init.png)
+![output of conda init](conda-init.png)
