@@ -1,0 +1,11 @@
+/* Minimal styles for answer details */
+
+details.answer summary { cursor: pointer; padding: 0.25rem 0.5rem; border-radius: 4px; display: inline-block; }
+details.answer summary::-webkit-details-marker { display: none; }
+details.answer .summary-label { font-weight: 600; }
+details.answer > div { margin-top: 0.5rem; }
+details.answer pre, details.answer code { background: var(--code-bg, #f6f8fa); padding: 0.75rem; border-radius: 4px; overflow: auto; }
+
+@media (prefers-color-scheme: dark) {
+  details.answer pre, details.answer code { background: rgba(255,255,255,0.03); }
+}
