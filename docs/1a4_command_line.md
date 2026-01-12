@@ -733,6 +733,7 @@ File is located here:
 
 `/data2/biotecnologie_molecolari_magris/epigenomics/bash/awk_example.txt`
 
+<br>
 - Discard the names and extract only the 2nd and 3rd columns:
 
 ```bash
@@ -741,7 +742,7 @@ awk '{print $2"\t"$3}' /data2/biotecnologie_molecolari_magris/epigenomics/bash/a
 # The same can be achieved 
 awk 'OFS="\t" {print $2,$3}' /data2/biotecnologie_molecolari_magris/epigenomics/bash/awk_example.txt
 ```
-
+<br>
 - Extract only the rows with `Biologia`
 
 ```bash
@@ -754,7 +755,7 @@ awk '/Biologia/' /data2/biotecnologie_molecolari_magris/epigenomics/bash/awk_exa
 
 awk '/Biologia/ {print $1"\t"$3}' /data2/biotecnologie_molecolari_magris/epigenomics/bash/awk_example.txt
 ```
-
+<br>
 - Extract only the names of student that achieved more or equal to 80 in `Chimica`. Try by your own:
 
 <!--<details class="answer">-->
