@@ -4,7 +4,7 @@ title: Lesson 6 - Multivariate analysis
 parent: 3. Tutorial
 nav_order: 6
 description: A comprehensive guide to understanding epigenetics.
-published: true
+published: false
 ---
 Final version
 {: .label .label-green }

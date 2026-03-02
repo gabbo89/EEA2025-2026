@@ -22,17 +22,17 @@ A virtual environment is basically a set of programs.
 ## Installing `conda`
 
 Conda is part of [Anaconda](https://www.anaconda.com/distribution/), which is available for free.
-Conda is also available through [Miniconda](https://docs.conda.io/en/latest/miniconda.html), a free minimal installer for conda.
+Conda is also available either through [Miniconda](https://docs.conda.io/en/latest/miniconda.html) or through [Miniforge](https://conda-forge.org/). Both are free minimal installer, although the latter is the most widely used and actively maintained by the conda-forge community. Miniforge includes both the classic conda package manager and the high-performance mamba package manager. Conda and mamba commands are fully interoperable. The executables can be found at [Conda-forge download page](https://conda-forge.org/download/), while more details are available at [Conda-forge github page](https://github.com/conda-forge/miniforge).
+ 
 
-Conda can be installed on a 64-bit Linux system with the following commands...
+Miniforge can be installed for example on a 64-bit Linux system with the following commands:
 
 ```bash
 # Downloading miniconda
-$ wget https://repo.continuum.io/miniconda/Miniconda3-latest-Linux-x86_64.sh -O miniconda.sh
+$ wget https://github.com/conda-forge/miniforge/releases/latest/download/Miniforge3-Linux-x86_64.sh
+
 # Installing miniconda
-$ bash miniconda.sh -b -p $HOME/miniconda
-# Updating conda
-$ conda update -q conda
+$ bash Miniforge3-$(uname)-$(uname -m).sh
 ```
 
 ## Cloning and activating a `conda` environment
@@ -44,6 +44,8 @@ A `.txt` copy of a conda environment is more explicit: it can be used to create 
 
 A conda environment can be activated using `$ conda activate name_of_environment`.
 Once activated, all the programs installed in this environment will become available.
+<br>
+
 Conda can be deactivated using `$ conda deactivate`.
 
 

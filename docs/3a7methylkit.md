@@ -4,7 +4,7 @@ title: Lesson 7 - Differential methylation
 parent: 3. Tutorial
 nav_order: 7
 description: A comprehensive guide to understanding epigenetics.
-published: true
+published: false
 ---
 
 Final version

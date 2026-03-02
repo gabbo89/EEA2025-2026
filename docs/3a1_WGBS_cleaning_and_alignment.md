@@ -24,7 +24,7 @@ jtd.addEvent(toggleDarkMode, 'click', function(){
 </script>
 -->
 Final version
-{: .label .label-green }
+{: .label .label-yellow }
 
 {: .important-title }
 > Aim
@@ -97,7 +97,7 @@ fastqc --help
 {: .no_toc }
 ```bash
 # move to the working directory
-cd /data2/student_space/st24_16_folder
+cd /data2/student_space/st25_20_folder
 
 # create the folder structure
 mkdir -p epigenomics/wgbs/sequences
@@ -610,7 +610,7 @@ bismark_methylation_extractor \
 --bedGraph \
 --CX_context \
 --cytosine_report \
---genome_folder /data2/student_space/st24_16_folder/epigenomics/wgbs/reference/ \
+--genome_folder /data2/student_space/st25_20_folder/epigenomics/wgbs/reference/ \
 alignments/rkatsiteli.leaves_pe.deduplicated.bam
 ```
 
@@ -777,10 +777,10 @@ https://github.com/angelmejiabrito/googledrivevideotowebpage?tab=readme-ov-file
 {: .no_toc }
 
 - reference genome:
-**`/data2/student_space/st24_16_folder/epigenomics/wgbs/reference/vitis_vinifera.fasta`**
+**`/data2/student_space/st25_20_folder/epigenomics/wgbs/reference/vitis_vinifera.fasta`**
 
 - alignment file:
-**`/data2/student_space/st24_16_folder/epigenomics/wgbs/alignments/rkatsiteli.leaves_pe.deduplicated.sort.bam`**
+**`/data2/student_space/st25_20_folder/epigenomics/wgbs/alignments/rkatsiteli.leaves_pe.deduplicated.sort.bam`**
 
 Jump to the coordinate: `chr05:24461000-24462000`
 
@@ -804,7 +804,7 @@ bismark_genome_preparation \
 --bowtie2 \
 --parallel 2 \
 --verbose \
-/data2/student_space/st24_16_folder/epigenomics/wgbs/chloroplast
+/data2/student_space/st25_20_folder/epigenomics/wgbs/chloroplast
 ```
 
 {: .success-title }

@@ -11,14 +11,14 @@ The analyses will be performed on a remote server, which can be accessed remotel
 
 For **windows** user's Mobaxterm is the client reccomended, while for **mac** and **linux** users the terminal is the default option.
 
-The ip address and username are already defined (for any issue contact me) 
+The ip address and username are already defined (for any issue contact me).
 
 ## **Windows users**
 
-Mobaxterm can be downloaded freely (home edition) from the official website  
+Mobaxterm can be downloaded freely (home edition) from the official website.  
 [Mobaxterm Download Page](https://mobaxterm.mobatek.net/download.html) 
 
-![moba_download]({{"/assets/images/image.png" | relative_url }})
+![moba_download]({{"/assets/images/1a2-1_mobadownload.png" | relative_url }})
 
 
 Once downloaded, the software can be installed following the instructions on screen or on the powerpoint presentation. 
@@ -26,7 +26,7 @@ Once downloaded, the software can be installed following the instructions on scr
 Files can be graphically accessed using the panel on the left side on Mobaxterm. The user can navigate through the directories and select the files they want to use. The files can be copied and pasted to the local computer.
 
 
-![moba_panel]({{"/assets/images/image-1.png" | relative_url }})
+![moba_panel]({{"/assets/images/1a2-2_moba_side_panel.png" | relative_url }})
 
 
 ## **Apple users**

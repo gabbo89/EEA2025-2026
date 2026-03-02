@@ -80,8 +80,8 @@ This illustrates how environmental factors can have multi-generational effects.
 ## Further Reading
 
 - [National Human Genome Research Institute - Epigenetics](https://www.genome.gov/genetics-glossary/Epigenetics)
-- [Epigenetics on Nature.com](https://www.nature.com/subjects/epigenetics)
-- [NIH Epigenetics Overview](https://www.nih.gov/news-events/epigenetics-overview) <!--???-->
+- [Epigenetics on Nature](https://www.nature.com/subjects/epigenetics)
+<!-- - [NIH Epigenetics Overview](https://www.nih.gov/news-events/epigenetics-overview) <!--???-->
 - [NIH Health & Education - Epigenetics](https://www.niehs.nih.gov/health/topics/science/epigenetics)
 
 ---

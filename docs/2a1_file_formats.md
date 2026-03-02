@@ -157,7 +157,7 @@ The mandatory fields in a SAM file are...
 10. **SEQ** Segment sequence.
 11. **QUAL** Phred-based base quality (same as the quailty string in [FASTQ](#fastq)) plus 33.
 
-SAM files can be manipulated using [SAMtools](samtools.md).
+SAM files can be manipulated using [SAMtools](https://www.htslib.org/doc/samtools.html).
 
 ## BAM
 

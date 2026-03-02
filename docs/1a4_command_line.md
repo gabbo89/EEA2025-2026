@@ -8,7 +8,7 @@ published: true
 ---
 
 FINAL VERSION
-{: .label .label-green }
+{: .label .label-yellow }
 
 
 This is an introduction to the *UNIX* command line.
@@ -479,7 +479,6 @@ CACACACACCACACCCACACCCACACACCCACACCCACACACCCACACCACACCCACACCACACCCACAC
 CACACCACACCCACACCACACACCACACCCACACACCACACCACACCCACACCACACCCACACCACACCC
 ACACACCACACCCACACACCCACACACCACACCCACACACCACACCCACACCCACACACACCACACCCAC
 ACACCACACCCACACCCACACACACACACACCACACCCACACCCACACCCACACACCCACACACCCACAA
-
 ```
 
 ## The `tail` command
@@ -681,7 +680,6 @@ Without BEGIN and END
 awk '{ line command(s) } ' input_file
 
 # For example
-
 awk '{print $0}' input_file # prints the entire line 
 awk '{print $3}' input_file # prints the third column of the line
 awk '{print $2"\t"$3}' input_file # prints the second and third columns of the line

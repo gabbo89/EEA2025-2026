@@ -9,7 +9,7 @@ published: true
 
 
 FINAL VERSION
-{: .label .label-yellow }
+{: .label .label-green }
 
 Have you ever faced the situation where you perform a long-running task on a remote machine, and suddenly your connection drops, the SSH session is terminated, and your work is lost. Well, it has happened to all of us at some point, hasn’t it? Luckily, there is a utility called screen that allows us to resume the sessions.
 
