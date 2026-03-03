@@ -61,8 +61,9 @@ Conda can be deactivated using `$ conda deactivate`.
 In order to configure the prompt and be able to use conda, you need to run the following command
 
 ```bash
-eval "$(/course/tadb/miniconda3/bin/conda shell.bash hook)"
+module load sw/env/miniconda3/4.9.2
 ```
+<!-- eval "$(/course/tadb/miniconda3/bin/conda shell.bash hook)" -->
 
 Now you will be able to use the conda exec.
 
