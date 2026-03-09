@@ -40,8 +40,8 @@ All screen commands are prefixed by an escape key, by default Ctrl-a (that's Con
 |---------------------------------------|-------------------------------------------------------|
 | detach 				| `Ctrl-a d`						|
 | detach and logout (quick exit) 	| `Ctrl-a D D`						|
-| exit screen 				| `Ctrl-a :` quit or exit all of the programs in screen.|
-| force-exit screen 			| `Ctrl-a C-\` (not recommended) 			|
+| exit screen 				| `Ctrl-a :` (then type `quit`) to exit all of the programs in screen.|
+| force-exit screen 			| `Ctrl-a \` (not recommended) 			|
 
 ## Help
 
@@ -70,7 +70,7 @@ All screen commands are prefixed by an escape key, by default Ctrl-a (that's Con
 | Description				| Command								|
 |---------------------------------------|-----------------------------------------------------------------------|
 | Split display horizontally 		| `Ctrl-a S`								|
-| Split display vertically 		| `Ctrl-a \|` or `Ctrl-a V` (for the vanilla vertical screen patch)	|
+| Split display vertically 		| `Ctrl-a |` or `Ctrl-a V` (for the vanilla vertical screen patch)	|
 | Jump to next display region 		| `Ctrl-a tab`								|
 | Remove current region 		| `Ctrl-a X`								|
 | Remove all regions but the current one| `Ctrl-a Q`								|
