@@ -75,6 +75,20 @@ All screen commands are prefixed by an escape key, by default Ctrl-a (that's Con
 | Remove current region 		| `Ctrl-a X`								|
 | Remove all regions but the current one| `Ctrl-a Q`								|
 
+# A small upgrade
+Let's try with a small upgrade of the screen session 
+
+Copy the following file to your own directory
+```bash
+cp /data2/biotecnologie_molecolari_magris/epigenomics/bash/.screenrc ~
+```
+
+Let's try again with
+
+
+```bash
+screen -r PROVA
+```
 
 <!--
 ## Misc
