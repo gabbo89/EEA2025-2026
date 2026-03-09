@@ -33,10 +33,9 @@ Sequence reads are first transformed into fully bisulfite-converted forward (C->
 
 ## Links
 
-- Bismark Publication
-  - [http://www.ncbi.nlm.nih.gov/pubmed/21493656]
-- Our review about primary data analysis in BS-Seq
-  - [http://www.ncbi.nlm.nih.gov/pubmed/22290186]
+- [Bismark Publication](http://www.ncbi.nlm.nih.gov/pubmed/21493656)
+- Our [review](http://www.ncbi.nlm.nih.gov/pubmed/22290186) about primary data analysis in BS-Seq
+
 
 
 ## Credits
