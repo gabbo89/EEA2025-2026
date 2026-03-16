@@ -290,7 +290,7 @@ In order to perform the alignment we will use the Bismark suite [^Bismark short 
 {: .warning }
 > Be sure that the reference genome has the required indexes
 
-We need to create the index files required by Bismark. The reference that we will use is a subset of the original reference. It contains only one chromosome (chr05) and the size is approx. 26.9 Mbp. The file is in fasta format.[^1]
+We need to create the index files required by Bismark. The reference that we will use is a subset of the original reference. It contains only one chromosome (chr05) and the size is approx. 26.9 Mbp. The file is in fasta format.
 
 
 ### Copy the reference sequence file to our working directory
@@ -406,9 +406,13 @@ reference \
 >Sequence pairs which were discarded because genomic sequence could not be extracted:    0
 >
 >Number of sequence pairs with unique best (first) alignment came from the bowtie output:
+>
 >CT/GA/CT:       51598   ((converted) top strand)
+>
 >GA/CT/CT:       0       (complementary to (converted) top strand)
+>
 >GA/CT/GA:       0       (complementary to (converted) bottom strand)
+>
 >CT/GA/GA:       50660   ((converted) bottom strand)
 >
 >Number of alignments to (merely theoretical) complementary strands being rejected in total:     0
