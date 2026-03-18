@@ -4,7 +4,7 @@ title: Lesson 2 - Oxford Nanopore Technologies alignment
 nav_order: 2
 parent: 3. Tutorial
 description: A comprehensive guide to understanding epigenetics.
-published: false
+published: true
 toc: true
 ---
 Final version
@@ -320,7 +320,7 @@ ont/alignments/rkatsiteli.leaves.ont.sort.bam \
 
 The option `-n` is used to specify the name of the tracks. In this case, we have respectively two tracks: `wgbs` and `ont`. The `-g` option is used to specify the reference file . The `-l` option is used to specify the region of interest. 
 
-
+<!--
 Since the version of igv available in the `epigenomics` conda environmente is not the latest, due to conflict with the libraries of other tools, not all features are available. There is a different conda environment available with a recent version of igv. To activate it, you can use the following command:
 
 ```bash
@@ -328,7 +328,7 @@ conda activate igv
 ```
 
 This will open a new enviroment where a recent versione of igv is available. You can use the same command as above in order to visualize the content of the bam files.
-
+-->
 
 ```bash
 igv \
