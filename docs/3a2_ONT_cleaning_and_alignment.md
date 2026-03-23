@@ -357,6 +357,7 @@ ont/alignments/rkatsiteli.leaves.ont.sort.bam \
 ```
 
 Try to change the colors associated with the methylation status. 
+
 <!--
 Sometimes it migh by complicated to discriminate between the contexts, therefore let's have a look to a temporary version of igv:
 
@@ -384,6 +385,7 @@ Remember to deactivate the environment in order to go back to the previous one (
 ```bash
 conda deactivate 
 ```
+
 -->
 
 # 4. Extract methylation informations 
