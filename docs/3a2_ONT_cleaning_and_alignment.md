@@ -8,7 +8,7 @@ published: true
 toc: true
 ---
 Final version
-{: .label .label-green }
+{: .label .label-yellow }
 
 {: .important-title }
 > Aim
@@ -328,7 +328,7 @@ conda activate igv
 ```
 
 This will open a new enviroment where a recent versione of igv is available. You can use the same command as above in order to visualize the content of the bam files.
--->
+
 
 ```bash
 igv \
@@ -338,13 +338,53 @@ wgbs/alignments/rkatsiteli.leaves_pe.deduplicated.sort.bam \
 ont/alignments/rkatsiteli.leaves.ont.sort.bam \
 -n wgbs,ont
 ```
+-->
 
 Now you are able to change the colors of the methylation status and for example discriminate between methylated and un-methylated positions in the ont track.
+
+What if you would like to check also the other contexts? 
+
+Let's try to upload in IGV a different bam file (already aligned reads) for which the methylation information is available for all 3 C's contexts (`CG`, `CHG` and `CHH`)
+
+```bash
+igv \
+-g wgbs/reference/vitis_vinifera.fasta \
+-l chr05:24461000-24462000 \
+wgbs/alignments/rkatsiteli.leaves_pe.deduplicated.sort.bam \
+ont/alignments/rkatsiteli.leaves.ont.sort.bam \
+/data2/biotecnologie_molecolari_magris/epigenomics/ont/rkatsiteli.leaves.chr05.bam \
+-n wgbs,ont,ont_allC
+```
+
+Try to change the colors associated with the methylation status. 
+<!--
+Sometimes it migh by complicated to discriminate between the contexts, therefore let's have a look to a temporary version of igv:
+
+```bash
+tmp_igv \
+-g wgbs/reference/vitis_vinifera.fasta \
+-l chr05:24461000-24462000 \
+wgbs/alignments/rkatsiteli.leaves_pe.deduplicated.sort.bam \
+ont/alignments/rkatsiteli.leaves.ont.sort.bam \
+/data2/biotecnologie_molecolari_magris/epigenomics/ont/rkatsiteli.leaves.chr05.bam \
+-n wgbs,ont,ont_allC
+```
+
+Inside the View, Preferences tab 
+
+![alt text](image-76.png)
+
+and then inside the Base Mods tab 
+
+![alt text](image-78.png)
+
+at the bottom we can define which context do we want to explore.
 
 Remember to deactivate the environment in order to go back to the previous one (epigenomics)
 ```bash
 conda deactivate 
 ```
+-->
 
 # 4. Extract methylation informations 
 We will use `modkit` to extract the methylation informations from the aligned reads. For a short or detailed description checks respectively [Modkit short manual][Modkit short manual]{: .btn } and [Modkit on Github][Modkit_github]{: .btn }
@@ -535,8 +575,11 @@ Subset the bam file in order to extract only the reads mapping to the chloroplas
 samtools view -b \
 -o ont/alignments/rkatsiteli.leaves.ont.chloroplast.only_chl.sort.bam \
 --write-index \
-ont/alignments/rkatsiteli.leaves.ont.chloroplast.sort.bam gi\|91983971\|ref\|NC_007957.1\| 
+ont/alignments/rkatsiteli.leaves.ont.chloroplast.sort.bam gi\|91983971 
 ```
+
+<!--gi\|91983971\|ref\|NC_007957.1\|  -->
+
 ### Create the bedMethyl tables 
 {: .no_toc}
 
