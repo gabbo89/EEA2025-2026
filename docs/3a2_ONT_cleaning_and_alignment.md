@@ -577,7 +577,7 @@ Subset the bam file in order to extract only the reads mapping to the chloroplas
 samtools view -b \
 -o ont/alignments/rkatsiteli.leaves.ont.chloroplast.only_chl.sort.bam \
 --write-index \
-ont/alignments/rkatsiteli.leaves.ont.chloroplast.sort.bam gi\|91983971 
+ont/alignments/rkatsiteli.leaves.ont.chloroplast.sort.bam gi\|91983971\|
 ```
 
 <!--gi\|91983971\|ref\|NC_007957.1\|  -->
