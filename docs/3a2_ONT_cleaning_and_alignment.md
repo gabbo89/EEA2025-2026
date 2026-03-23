@@ -302,8 +302,8 @@ Load on igv the following files:
 wgbs/reference/vitis_vinifera.fasta #reference file 
 wgbs/alignments/rkatsiteli.leaves_pe.deduplicated.sort.bam #wgbs alignment file 
 ont/alignments/rkatsiteli.leaves.ont.sort.bam #ont alignment file 
-
 ```
+
 And jump to the following coordinate:
 chr05:24461000-24462000
 
