@@ -73,7 +73,7 @@ conda activate epigenomics
 
 ```bash
 # move to the working directory
-cd /data2/student_space/st24_16_folder
+cd /data2/student_space/st25_20_folder
 
 # create the folder structure
 mkdir -p epigenomics/methylation_distribution
