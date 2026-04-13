@@ -4,7 +4,7 @@ title: Using R
 parent: Lesson 4 - Genome wide methylation distribution analysis
 nav_order: 1
 description: A comprehensive guide to understanding epigenetics.
-published: false
+published: true
 ---
 
 Final version
@@ -37,7 +37,7 @@ The file is located at the following path:
 `/data2/biotecnologie_molecolari_magris/epigenomics/meth_distribution/arabidopsis_wgbs.CX_report.txt`
 
 It should be already available in your directory:
-`/data2/student_space/st24_16_folder/epigenomics/methylation_distribution/`
+`/data2/student_space/st25_20_folder/epigenomics/methylation_distribution/`
 
 
 ### Activate the conda environment
@@ -50,7 +50,7 @@ conda activate epigenomics
 
 ```bash
 # Move the working directory
-cd /data2/student_space/st24_16_folder/epigenomics/
+cd /data2/student_space/st25_20_folder/epigenomics/
 
 # Create a new directory for this tutorial
 mkdir -p genome_wide_meth/
@@ -87,7 +87,7 @@ CG$methylation_level <- round(100*(CG$c / (CG$c + CG$t)),0)
 # 3. Create windows of fixed size
 The chromosome will be divided in non-overlapping windows of a fixed size (e.g. 100,000 bp). The size of the windows is totally arbitrary. The methylation values will be averaged in each window. The size of 100 Kb is sufficient to represent graphically the methylation distribution along the chromosome.
 
-Next we need to assing each C position to a genomic window (for example the C in position 1,145 will be assigned to the window 1-10,000, while the C in position 15,300 will be assigned to the window 10,001-20,000).
+Next we need to assign each C position to a genomic window (for example, if we use windows of 10kb in size, the C in position 1,145 will be assigned to the window 1-10,000, while the C in position 15,300 will be assigned to the window 10,001-20,000).
 
 <!--We will use the `cut` function in `R` to assign each C position to a genomic window-->
 We can perform this operation in a vectorized way using the column with the genomic coordinates (from the CG data.frame) and a new vector of defined intervals (will become a new column in the CG data.frame).
@@ -110,7 +110,7 @@ The same vector can be obtained in an automatic (simplified) way using the follo
 my_breaks=seq(0,100,by=10)
 ```
 
-The vector with intervals of the windows assigned to each position, of length from 1 to 100 can be obtained using the `cut` function:
+The vector with intervals of the windows assigned to each position, of length 10bp, from 1 to 100 can be obtained using the `cut` function:
 
 ```r
 # Define the genomic positions
@@ -146,7 +146,7 @@ cut(all_genomic_positions,breaks=my_breaks)
 
 <!--
 !!!! TO CHECK 
-For example , if we want to divide the chromosome in windows of 100,000 bp, we can use the following code:
+For example, if we want to divide the chromosome in windows of 100,000 bp, we can use the following code:
 
 
 We can replace the intervals (0,10] with increasing numbers that identify the windows (1,2,3,4,5..) or with numbers that represent the end coordinates of each windows (100000,200000,300000..). For example:
@@ -215,11 +215,13 @@ tail(CG)
 ![tail_CG]({{"/assets/images/image-8.png" | relative_url }})
 
 For each site we have now the assigned windows coordinate. 
+<br>
 We can now create a data.frame with the average methylation for each window, using basic `R` functions.
 
 For example:
+
 ```r
-# Use the aggregate funcion, to get the average per window
+# Use the aggregate function, to get the average per window
 aggregate(methylation_level~window,data=CG, FUN = mean)
 ```
 
@@ -361,7 +363,16 @@ library(dplyr)
 
 # Assign the windows to coordinates
 CG_windows = CG %>% mutate(window = cut(pos, breaks=my_breaks, labels=my_labels)) 
+```
 
+Here we used the following syntax:
+
+1. `CG %>%`, where `%>%` represent the pipe operator. The command used the dataframe `CG` as the input for the next operation. 
+
+2. The `mutate` function which add colums to the daframe. It create a new column named `window`, which contains the windows labels.
+
+
+```r
 # Check the first 10 rows of the modified dataframe 
 head(CG_windows)
 ```
@@ -392,6 +403,7 @@ head(CG_window_mean_meth_and_length)
 ![CG_table]({{"/assets/images/image-14.png" | relative_url }})
 
 The format of the output is slightly different, because created with `dplyr` package. It is in *tibble* format. 
+The latters is a modern version of a dataframe. It shows only the first rows and columns and displays column types. 
 
 Now we can draw the same graph as before, but with the new data. We will use the `ggplot2` package.
 

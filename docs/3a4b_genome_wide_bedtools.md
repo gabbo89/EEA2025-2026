@@ -4,7 +4,7 @@ title: Using bedtools
 parent: Lesson 4 - Genome wide methylation distribution analysis
 nav_order: 2
 description: A comprehensive guide to understanding epigenetics.
-published: false
+published: true
 ---
 
 Final version
@@ -61,14 +61,14 @@ The file is located at the following path:
 `/data2/biotecnologie_molecolari_magris/epigenomics/meth_distribution/arabidopsis_wgbs.CX_report.txt`
 
 It should be already available in your directory:
-`/data2/student_space/st24_16_folder/epigenomics/methylation_distribution/`
+`/data2/student_space/st25_20_folder/epigenomics/methylation_distribution/`
 
 # 1. Filter the dataset 
 We need to filter the file in order to remove positions without coverage and by selecting the methylation contexts (`CG`) for the chromosome of interest.
 
 ```bash
 # Move the working directori
-cd /data2/student_space/st24_16_folder/epigenomics/
+cd /data2/student_space/st25_20_folder/epigenomics/
 
 # Create a new directory for this tutorial
 mkdir -p genome_wide_meth/
