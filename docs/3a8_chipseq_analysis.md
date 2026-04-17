@@ -1,10 +1,10 @@
 ---
 layout: default
-title: Lesson 8 - Chip-seq analysis
+title: Lesson 6 - Chip-seq analysis
 parent: 3. Tutorial
 nav_order: 8
 description: A comprehensive guide to understanding epigenetics.
-published: false
+published: true
 ---
 
 Final version
@@ -68,10 +68,10 @@ conda activate chipseq_data
 
 ```bash
 # Create a new directory for this tutorial
-mkdir -p /data2/student_space/st24_16_folder/epigenomics/chip_seq/
+mkdir -p /data2/student_space/st25_20_folder/epigenomics/chip_seq/
 
 # Move the working directory
-cd /data2/student_space/st24_16_folder/epigenomics/chip_seq/
+cd /data2/student_space/st25_20_folder/epigenomics/chip_seq/
 
 # Create the output folders 
 mkdir -p fastqc logs trimmed alignments reference bigwig plots macs3
@@ -99,10 +99,11 @@ We will start with the analysis of an histone modification mark, H3K4me1. We nee
 ```bash
 # Define a set of variables
 dataset=h3k4me1
+threads=2
 fastqpath=/data2/biotecnologie_molecolari_magris/epigenomics/chip_seq/fastq/
+
 R1=${fastqpath}/rkatsiteli.${dataset}.R1.fastq.gz
 R2=${fastqpath}/rkatsiteli.${dataset}.R2.fastq.gz
-threads=2
 
 # path to bowtie2 indexes
 ref_index=reference/vitis_vinifera
@@ -175,6 +176,16 @@ samtools markdup \
 alignments/${dataset}.dedup.bam
 ```
 
+{: .note}
+> Due to time limitations, we will start directly from the aligned files that are available here:
+> 
+
+
+Let's copy the available alignment files in the output directory
+
+```bash
+cp /data2/biotecnologie_molecolari_magris/epigenomics/chip_seq/alignments/*.dedup.bam* alignments/
+```
 
 In order to get a first look at our data, we can use [deeptools](https://deeptools.readthedocs.io/en/latest/content/example_usage.html), which is a suite of python tools developed for the efficient analysis of high-througput sequencing data. It is particularly useful for the analysis of ChIP-seq data. A coverage track can be generated using the `bamCoverage` function. The track can then be uploaded on igv for visualization.
 
@@ -182,6 +193,9 @@ In order to get a first look at our data, we can use [deeptools](https://deeptoo
 
 
 ```bash
+dataset=h3k4me1
+threads=2
+
 bamCoverage \
   -b alignments/${dataset}.dedup.bam \
   -o bigwig/${dataset}.dedup.bw \
@@ -191,6 +205,8 @@ bamCoverage \
   --extendReads 200 \
   -p $threads
 ```
+
+We will upload the file afterwards in `igv`.
 
 In order to plot a heatmap associated with genomic regions, we need to first generate a matrix file (generated with `computeMatrix`) and then draw the heatmap with `plotHeatmap`.
 
@@ -242,6 +258,9 @@ We need to define the new dataset variable, but anything else is identical as ab
 ```bash
 # Define a set of variables
 dataset=h3k4me3
+threads=2
+fastqpath=/data2/biotecnologie_molecolari_magris/epigenomics/chip_seq/fastq/
+
 R1=${fastqpath}/rkatsiteli.${dataset}.R1.fastq.gz
 R2=${fastqpath}/rkatsiteli.${dataset}.R2.fastq.gz
 
@@ -254,6 +273,9 @@ R2=${fastqpath}/rkatsiteli.${dataset}.R2.fastq.gz
 ```bash
 # Define a set of variables
 dataset=h3k27ac
+threads=2
+fastqpath=/data2/biotecnologie_molecolari_magris/epigenomics/chip_seq/fastq/
+
 R1=${fastqpath}/rkatsiteli.${dataset}.R1.fastq.gz
 R2=${fastqpath}/rkatsiteli.${dataset}.R2.fastq.gz
 
@@ -282,10 +304,11 @@ Commands are identical as above (for the histone modifications explored).
 ```bash
 # Define a set of variables
 dataset=input
+threads=2
 fastqpath=/data2/biotecnologie_molecolari_magris/epigenomics/chip_seq/fastq/
+
 R1=${fastqpath}/rkatsiteli.${dataset}.R1.fastq.gz
 R2=${fastqpath}/rkatsiteli.${dataset}.R2.fastq.gz
-threads=2
 
 # path to bowtie2 indexes
 ref_index=reference/vitis_vinifera

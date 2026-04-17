@@ -4,7 +4,7 @@ title: Lesson 5 - Meta-analysis of DNA methylation
 nav_order: 5
 parent: 3. Tutorial
 description: A comprehensive guide to understanding epigenetics.
-published: false
+published: true
 ---
 
 
@@ -133,20 +133,20 @@ $ awk '{if ($1=="Chr1" && ($4+$5)>0 && $6=="CHH") print $0}' "Arabidopsis_wgbs.C
 
 The initial methylome table must be filtered to remove cytosine positions not covered by any reads. We will use again `awk` for this purpose. It must then be split into three separate files containing only the `CG`, `CHG`, and `CHH` contexts, respectively. For faster computation during the exercise, only chromosome 1 (Chr1) data will be used, although ideally, data from all chromosomes should be included.
 
-The file has been already used in the previous tutorial. (add link)
+The file has been already used in the [previous tutorial](3a3_methylation_distribution.md).
 
 The file is located at the following path:
 
 `/data2/biotecnologie_molecolari_magris/epigenomics/meth_distribution/arabidopsis_wgbs.CX_report.txt`
 
 It should be already available in your directory:
-`/data2/student_space/st24_16_folder/epigenomics/methylation_distribution/`
+`/data2/student_space/st25_20_folder/epigenomics/methylation_distribution/`
 
 
 
 ```bash
 # Move the working directory
-cd /data2/student_space/st24_16_folder/epigenomics/
+cd /data2/student_space/st25_20_folder/epigenomics/
 
 # Create a new directory for this tutorial
 mkdir -p meta_analysis/
