@@ -54,7 +54,7 @@ We need to add a control sample to our ChIP-seq experiment to account for non-sp
 
 1. DNA isolated from the same cells but without immunoprecipitation (**input DNA**). Cells are cross-linked and fragmented, but no immunoprecipitation is performed. This DNA is then sequenced and used as a control to account for non-specific binding of the antibody [*Control for subtracting the effect of chromatin accessibility*]
 
-2. Performing  a ChIP-seq experiment with an antibody that does not bind to the protein of interest (not known to be involved in DNA bindin or chromatin modifications, such as IgG). This is called an (**Mock IP**). [*Control for antibody specificity*] 
+2. Performing  a ChIP-seq experiment with an antibody that does not bind to the protein of interest (not known to be involved in DNA binding or chromatin modifications, such as IgG). This is called an (**Mock IP**). [*Control for antibody specificity*] 
 
 
 
@@ -178,14 +178,14 @@ alignments/${dataset}.dedup.bam
 
 {: .note}
 > Due to time limitations, we will start directly from the aligned files that are available here:
-> 
+> `/data2/biotecnologie_molecolari_magris/epigenomics/chip_seq/alignments/`
+>
+> Let's copy the available alignment files in the output directory
+>```bash
+>cp /data2/biotecnologie_molecolari_magris/epigenomics/chip_seq/alignments/*.dedup.bam* alignments/
+>```
 
-
-Let's copy the available alignment files in the output directory
-
-```bash
-cp /data2/biotecnologie_molecolari_magris/epigenomics/chip_seq/alignments/*.dedup.bam* alignments/
-```
+<br>
 
 In order to get a first look at our data, we can use [deeptools](https://deeptools.readthedocs.io/en/latest/content/example_usage.html), which is a suite of python tools developed for the efficient analysis of high-througput sequencing data. It is particularly useful for the analysis of ChIP-seq data. A coverage track can be generated using the `bamCoverage` function. The track can then be uploaded on igv for visualization.
 
