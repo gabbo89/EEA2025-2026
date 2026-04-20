@@ -4,7 +4,7 @@ title: Lesson 6 - Chip-seq analysis
 parent: 3. Tutorial
 nav_order: 8
 description: A comprehensive guide to understanding epigenetics.
-published: true
+published: false
 ---
 
 Final version
@@ -175,6 +175,7 @@ samtools markdup \
 - \
 alignments/${dataset}.dedup.bam
 ```
+<br>
 
 {: .note}
 > Due to time limitations, we will start directly from the aligned files that are available here:
