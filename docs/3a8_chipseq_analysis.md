@@ -4,7 +4,7 @@ title: Lesson 6 - Chip-seq analysis
 parent: 3. Tutorial
 nav_order: 8
 description: A comprehensive guide to understanding epigenetics.
-published: false
+published: true
 ---
 
 Final version

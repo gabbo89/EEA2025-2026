@@ -133,7 +133,7 @@ $ awk '{if ($1=="Chr1" && ($4+$5)>0 && $6=="CHH") print $0}' "Arabidopsis_wgbs.C
 
 The initial methylome table must be filtered to remove cytosine positions not covered by any reads. We will use again `awk` for this purpose. It must then be split into three separate files containing only the `CG`, `CHG`, and `CHH` contexts, respectively. For faster computation during the exercise, only chromosome 1 (Chr1) data will be used, although ideally, data from all chromosomes should be included.
 
-The file has been already used in the [previous tutorial](3a3_methylation_distribution.md).
+The file has been already used in the [previous tutorial](3a3_methylation_distribution.html).
 
 The file is located at the following path:
 
