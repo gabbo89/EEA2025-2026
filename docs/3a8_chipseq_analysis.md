@@ -181,7 +181,7 @@ alignments/${dataset}.dedup.bam
 > Due to time limitations, we will start directly from the aligned files that are available here:
 > `/data2/biotecnologie_molecolari_magris/epigenomics/chip_seq/alignments/`
 >
-> Let's copy the available alignment files in the output directory
+> Let's copy the available alignment files in the alignments directory
 >```bash
 >cp /data2/biotecnologie_molecolari_magris/epigenomics/chip_seq/alignments/*.dedup.bam* alignments/
 >```
