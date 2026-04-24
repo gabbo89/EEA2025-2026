@@ -24,7 +24,7 @@ jtd.addEvent(toggleDarkMode, 'click', function(){
 </script>
 -->
 Final version
-{: .label .label-yellow }
+{: .label .label-green }
 
 {: .important-title }
 > Aim

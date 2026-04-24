@@ -471,8 +471,8 @@ chr19 49302900 49303200 -0.25
 Wiggle files is a text-based format used to display dense continouous numerical data on browser as for example IGV or UCSC (1-based format). Wiggle format is line-oriented. A WIG file consists of one or more blocks, each containing a declaration line followed by lines defining data elements. There are two options for formatting wiggle data - variableStep and fixedStep - which were developed to allow the file to be written as compactly as possibile. *VariableStep* is used for data with irregular intervals between new data points. *FixedStep* is used for data with regular intervals betweeen new data values and is the more compact wiggle format. 
 
 *VariableStep* begins with a declaration line, followed by two columns containing chromosome positions and data values. The declaration line begins with **variableStep** and is followed by space-separated key-value pairs:
-    - chrom - name of chrosomosome (required)
-    - span - number of bases that each data values should cover (optional, defaults to 1)
+- **chrom** - name of chrosomosome (required)
+- **span** - number of bases that each data values should cover (optional, defaults to 1)
 
 For example:
 
@@ -494,7 +494,7 @@ variableStep chrom=chr2 span=5
 
 will both display a value of 12.5 at position 300701-300705 on chromosome 2. 
 
-*FixedStep* format is designed for data with regular intervals between data points, and is more compact compare to *variableStep*. After the wiggle track definition line, fixedStep begins with a declaration line and is followed by a single column of data values. The declaration line starts with the word fixedStep and includes specifications for chromosome, start coordinate, and step size. The span specification has the same meaning as in variableStep format. For example, this fixedStep specification:
+*FixedStep* format is designed for data with regular intervals between data points, and is more compact compare to *variableStep*. After the wiggle track definition line, fixedStep begins with a declaration line and is followed by a single column of data values. The declaration line starts with the word **fixedStep** and includes specifications for chromosome, start coordinate, and step size. The span specification has the same meaning as in variableStep format. If no span is defined, 1 will be used as default. For example, this fixedStep specification:
 
 ```
 fixedStep chrom=chr3 start=200701 step=100
@@ -512,7 +512,7 @@ fixedStep chrom=chr5 start=200701 step=100 span=5
 10
 ```
 The values will be now displayed as 5-bp regions on cromosome 5 at 200701-200705, 200801-200805 and 200901-200905, respectively. 
-If no span is defined, 1 will be used as default. 
+
 
 Wiggle values can be integer, real, positive or negative. Chromosome coordinates are 1-based. 
 

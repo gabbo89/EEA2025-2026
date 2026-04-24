@@ -8,7 +8,7 @@ published: true
 toc: true
 ---
 Final version
-{: .label .label-yellow }
+{: .label .label-green }
 
 {: .important-title }
 > Aim
